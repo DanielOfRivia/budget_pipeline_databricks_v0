@@ -1,0 +1,15 @@
+# The main pipeline for budget_v1
+
+resources:
+  pipelines:
+    rbc_transactions_etl:
+      name: rbc_transactions_etl
+      catalog: ${var.catalog}
+      schema: ${var.schema}
+      serverless: true
+      root_path: "../src/transaction_transformation"
+
+      libraries:
+        - glob:
+            include: ../src/transaction_transformation/my_transformation.sql
+

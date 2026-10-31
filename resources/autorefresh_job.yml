@@ -1,0 +1,20 @@
+# A sample job for budget_v1.
+
+resources:
+  jobs:
+    sample_job:
+      name: sample_job
+
+      trigger:
+        pause_status: UNPAUSED
+        file_arrival:
+          url: /Volumes/workspace/budget/raw/transactions/
+
+      #email_notifications:
+      #  on_failure:
+      #    - your_email@example.com
+
+      tasks:
+        - task_key: refresh_pipeline
+          pipeline_task:
+            pipeline_id: ${resources.pipelines.rbc_transactions_etl.id}
