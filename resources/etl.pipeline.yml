@@ -11,5 +11,5 @@ resources:
 
       libraries:
         - glob:
-            include: ../src/transaction_transformation/my_transformation.sql
+            include: ../src/transaction_transformation/**
 
