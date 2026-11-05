@@ -8,7 +8,7 @@ resources:
       trigger:
         pause_status: UNPAUSED
         file_arrival:
-          url: /Volumes/workspace/budget/raw/transactions/
+          url: ${var.source_volume_path}
 
       #email_notifications:
       #  on_failure:

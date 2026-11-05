@@ -19,17 +19,10 @@ SELECT
     current_timestamp()     AS _ingested_at,
     _rescued_data
 FROM STREAM read_files(
-  '/Volumes/workspace/budget/raw/transactions/download-transactions*.csv',
+  '${source_volume_path}download-transactions*.csv',
   format => 'csv',
   header => true,
   schema => '`Account Type` STRING, `Account Number` STRING, `Transaction Date` STRING, `Cheque Number` STRING, `Description 1` STRING, `Description 2` STRING, `CAD$` STRING,`USD$` STRING',
   enforceSchema => false,
   rescuedDataColumn => '_rescued_data'
 );
-------------------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------------------
---silver
-
-------------------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------------------
-

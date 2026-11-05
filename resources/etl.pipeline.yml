@@ -9,7 +9,9 @@ resources:
       serverless: true
       root_path: "../src/transaction_transformation"
 
+      configuration:
+        source_volume_path: ${var.source_volume_path}
+
       libraries:
         - glob:
             include: ../src/transaction_transformation/**
-

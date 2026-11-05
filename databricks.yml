@@ -15,6 +15,9 @@ variables:
   schema:
     description: Default schema for the pipeline
     default: budget_bundle
+  source_volume_path:
+    description: Path to the source volume for file arrival triggers
+    default: /Volumes/workspace/budget/raw/transactions/
 
 targets:
   dev:
@@ -29,3 +32,4 @@ targets:
     variables:
       catalog: workspace
       schema: budget_bundle
+      source_volume_path: /Volumes/workspace/budget/raw/transactions/
