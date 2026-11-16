@@ -5,7 +5,7 @@ resources:
     rbc_transactions_etl:
       name: rbc_transactions_etl
       catalog: ${var.catalog}
-      schema: ${var.schema}
+      schema: ${resources.schemas.budget_schema.name}
       serverless: true
       root_path: "../src/transaction_transformation"
 

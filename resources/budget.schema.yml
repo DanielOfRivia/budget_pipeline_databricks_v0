@@ -1,0 +1,9 @@
+# The schema that holds the pipeline's tables.
+# In development mode the name is prefixed with 'dev_<your_name>_', so each target gets its own schema.
+
+resources:
+  schemas:
+    budget_schema:
+      catalog_name: ${var.catalog}
+      name: ${var.schema}
+      comment: Bronze, silver and gold transaction tables for budget_v1

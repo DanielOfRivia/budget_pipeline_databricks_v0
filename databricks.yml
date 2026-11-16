@@ -13,8 +13,8 @@ variables:
     description: Unity Catalog catalog for the pipeline
     default: workspace
   schema:
-    description: Default schema for the pipeline
-    default: budget_bundle
+    description: Schema for the pipeline's tables (created by the bundle)
+    default: budget_pipeline
   source_volume_path:
     description: Volume folder where RBC transaction CSVs are uploaded
     default: /Volumes/workspace/budget/raw/rbc/
@@ -31,5 +31,5 @@ targets:
       host: https://dbc-ac6ead32-690e.cloud.databricks.com
     variables:
       catalog: workspace
-      schema: budget_bundle
+      schema: budget_pipeline
       source_volume_path: /Volumes/workspace/budget/raw/rbc/
