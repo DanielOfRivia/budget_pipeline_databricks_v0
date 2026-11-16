@@ -5,8 +5,8 @@ resources:
     sample_job:
       name: transactions_job
 
+      # No pause_status: paused in development mode, active in production mode.
       trigger:
-        pause_status: UNPAUSED
         file_arrival:
           url: ${var.source_volume_path}
 
