@@ -9,5 +9,4 @@ SELECT
   count(*) as n_transactions,
   AVG(amount) as avg_transaction
 FROM silver_transactions_v2
-GROUP BY account_number, date_trunc('MONTH', transaction_date)
-ORDER BY date_trunc('MONTH', transaction_date) desc;
+GROUP BY account_number, date_trunc('MONTH', transaction_date);

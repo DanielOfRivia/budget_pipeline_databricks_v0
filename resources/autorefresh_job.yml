@@ -3,7 +3,7 @@
 resources:
   jobs:
     sample_job:
-      name: sample_job
+      name: transactions_job
 
       trigger:
         pause_status: UNPAUSED
