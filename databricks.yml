@@ -33,3 +33,17 @@ targets:
       catalog: workspace
       schema: budget_pipeline
       source_volume_path: /Volumes/workspace/budget/raw/rbc/
+
+  prod:
+    # Production mode: no name prefix, triggers stay active, and only one copy is deployed.
+    mode: production
+    workspace:
+      host: https://dbc-ac6ead32-690e.cloud.databricks.com
+      root_path: /Workspace/Users/${workspace.current_user.userName}/.bundle/${bundle.name}/${bundle.target}
+    permissions:
+      - user_name: ${workspace.current_user.userName}
+        level: CAN_MANAGE
+    variables:
+      catalog: workspace
+      schema: budget_pipeline
+      source_volume_path: /Volumes/workspace/budget/raw/rbc/
