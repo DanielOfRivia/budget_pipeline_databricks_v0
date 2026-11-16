@@ -19,8 +19,9 @@ SELECT
     current_timestamp()     AS _ingested_at,
     _rescued_data
 FROM STREAM read_files(
-  '${source_volume_path}download-transactions*.csv',
+  '${source_volume_path}',
   format => 'csv',
+  pathGlobFilter => '*.csv',
   header => true,
   schema => '`Account Type` STRING, `Account Number` STRING, `Transaction Date` STRING, `Cheque Number` STRING, `Description 1` STRING, `Description 2` STRING, `CAD$` STRING,`USD$` STRING',
   enforceSchema => false,
